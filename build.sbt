@@ -1,5 +1,5 @@
-val TWO_TEN_SCALA_VERSION = "2.10.5"
-val TWO_ELEVEN_SCALA_VERSION = "2.11.11"
+val TwoTenScalaVersion = "2.10.5"
+val TwoElevenScalaVersion = "2.11.11"
 
 organization := "com.mguaypaq.spark"
 
@@ -7,14 +7,14 @@ name := "small-components"
 
 version := "1.0.0"
 
-scalaVersion := TWO_ELEVEN_SCALA_VERSION
+scalaVersion := TwoElevenScalaVersion
 
 scalacOptions ++= Seq("-unchecked", "-deprecation")
 
-crossScalaVersions := Seq(TWO_TEN_SCALA_VERSION, TWO_ELEVEN_SCALA_VERSION)
+crossScalaVersions := Seq(TwoTenScalaVersion, TwoElevenScalaVersion)
 
 libraryDependencies ++= Seq(
-  if(scalaVersion.value == TWO_TEN_SCALA_VERSION)
+  if(scalaVersion.value == TwoTenScalaVersion)
     "org.apache.spark" % s"spark-core_2.10" % "1.6.0"
   else
     "org.apache.spark" % s"spark-core_2.11" % "2.2.1"
